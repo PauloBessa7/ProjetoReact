@@ -1,13 +1,14 @@
 import './index.css'
 
-const CampoInput = () => {
+const CampoInput = (props) => {
+
+    const placeholderModificada = `${props.placeholder}...`
+
     return (
-       <div className='campo'>
-
-        <label>Nome</label>
-        <input type='text' placeholder='Digite seu nome'></input>
-
-       </div>  
+        <div className='campo'>
+            <label>{props.label}</label>
+            <input type='text' placeholder={placeholderModificada}></input>
+        </div>
     )
 }
 

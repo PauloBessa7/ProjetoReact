@@ -11,15 +11,22 @@ const Formulario = () => {
         'DeepRock'
     ]
 
+    const aoSalvar = (evento) => {
+        evento.preventDefault()
+        console.log(evento)
+    }
+
     return (
         <section className='formulario'>
-            <form>
+            <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados do jogador</h2>
-                <CampoInput label='Nome' placeholder="Digite seu nome"></CampoInput>
-                <CampoInput label='Cargo' placeholder="Digite seu cargo"></CampoInput>
-                <CampoInput label='Imagem' placeholder="Digite o endereço da imagem"></CampoInput>
-                <ListaSuspensa itens={times} label='Time'></ListaSuspensa>
-                <Botao texto='Registrar'></Botao>
+                <CampoInput obrigatorio={true} label='Nome' placeholder="Digite seu nome"></CampoInput>
+                <CampoInput obrigatorio={true} label='Cargo' placeholder="Digite seu cargo"></CampoInput>
+                <CampoInput obrigatorio={true} label='Imagem' placeholder="Digite o endereço da imagem"></CampoInput>
+                <ListaSuspensa obrigatorio={true}  itens={times} label='Time'></ListaSuspensa>
+                <Botao texto='Criar Card'>
+                    Criar Card
+                </Botao>
             </form>
         </section>
     )
